@@ -533,32 +533,32 @@ const Page = async ({ searchParams })=>{
                         children: "Products"
                     }, void 0, false, {
                         fileName: "[project]/app/(root)/(home)/page.tsx",
-                        lineNumber: 28,
+                        lineNumber: 26,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "max-sm:hidden ",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$filter$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                             fileName: "[project]/app/(root)/(home)/page.tsx",
-                            lineNumber: 30,
+                            lineNumber: 28,
                             columnNumber: 6
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/(root)/(home)/page.tsx",
-                        lineNumber: 29,
+                        lineNumber: 27,
                         columnNumber: 5
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(root)/(home)/page.tsx",
-                lineNumber: 27,
+                lineNumber: 25,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Separator"], {
                 className: "my-4"
             }, void 0, false, {
                 fileName: "[project]/app/(root)/(home)/page.tsx",
-                lineNumber: 34,
+                lineNumber: 32,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -567,12 +567,12 @@ const Page = async ({ searchParams })=>{
                         product: product
                     }, product._id, false, {
                         fileName: "[project]/app/(root)/(home)/page.tsx",
-                        lineNumber: 39,
+                        lineNumber: 37,
                         columnNumber: 7
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/(root)/(home)/page.tsx",
-                lineNumber: 36,
+                lineNumber: 34,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$pagination$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -580,7 +580,7 @@ const Page = async ({ searchParams })=>{
                 pageNumber: page ? +page : 1
             }, void 0, false, {
                 fileName: "[project]/app/(root)/(home)/page.tsx",
-                lineNumber: 42,
+                lineNumber: 40,
                 columnNumber: 4
             }, this)
         ]

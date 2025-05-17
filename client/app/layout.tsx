@@ -1,9 +1,10 @@
-import type { Metadata } from 'next'
-import './globals.css'
-import { ChildProps } from '@/types'
-import { Montserrat } from 'next/font/google'
 import SessionProvider from '@/components/providers/session.provider'
+import { ThemeProvider } from '@/components/providers/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
+import { ChildProps } from '@/types'
+import type { Metadata } from 'next'
+import { Montserrat } from 'next/font/google'
+import './globals.css'
 
 const montserrat = Montserrat({
 	subsets: ['cyrillic', 'latin'],
@@ -20,11 +21,20 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: ChildProps) {
 	return (
 		<SessionProvider>
-			<html lang='en'>
+			<html lang='en' suppressHydrationWarning>
 				<body
 					className={`${montserrat.variable} overflow-x-hidden antialiased`}
 				>
-					<div className='container max-w-6xl mt-24'>{children}</div>
+					<div className='container max-w-6xl mt-24'>
+						<ThemeProvider
+							attribute='class'
+							defaultTheme='system'
+							enableSystem
+							disableTransitionOnChange
+						>
+							{children}
+						</ThemeProvider>
+					</div>
 					<Toaster />
 				</body>
 			</html>
