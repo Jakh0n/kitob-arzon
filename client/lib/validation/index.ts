@@ -1,5 +1,3 @@
-import { updateProduct } from '@/actions/admin.action'
-import { verifyOtp } from './../../actions/auth-action'
 import { z } from 'zod'
 
 export const loginSchema = z.object({
@@ -86,3 +84,9 @@ export const updateUserSchema = z.object({
 export const updateStatusSchema = z
 	.object({ status: z.string() })
 	.merge(idSchema)
+
+export const contactSchema = z.object({
+	message: z.string().min(10),
+	phone: z.string().min(10),
+	name: z.string().min(3),
+})

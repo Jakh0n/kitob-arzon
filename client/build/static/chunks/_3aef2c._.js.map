@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/jahkon/Desktop/Redopia/client/hooks/use-action.ts"],"sourcesContent":["'use client'\nimport { useState } from 'react'\nimport { toast } from './use-toast'\n\nfunction UseAction() {\n\tconst [isLoading, setIsLoading] = useState<boolean>(false)\n\n\tfunction onError(message: string) {\n\t\tsetIsLoading(false)\n\t\ttoast({ description: message, variant: 'destructive' })\n\t}\n\treturn { isLoading, setIsLoading, onError }\n}\n\nexport default UseAction\n"],"names":[],"mappings":";;;AACA;AACA;;AAFA;;;AAIA,SAAS;;IACR,MAAM,CAAC,WAAW,aAAa,GAAG,CAAA,GAAA,6JAAA,CAAA,WAAQ,AAAD,EAAW;IAEpD,SAAS,QAAQ,OAAe;QAC/B,aAAa;QACb,CAAA,GAAA,wHAAA,CAAA,QAAK,AAAD,EAAE;YAAE,aAAa;YAAS,SAAS;QAAc;IACtD;IACA,OAAO;QAAE;QAAW;QAAc;IAAQ;AAC3C;GARS;KAAA;uCAUM"}},
+    {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

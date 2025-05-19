@@ -1,7 +1,5 @@
 'use client'
-
 import { addFavorite } from '@/actions/user.action'
-
 import useAction from '@/hooks/use-action'
 import { toast } from '@/hooks/use-toast'
 import { cn, formatPrice } from '@/lib/utils'
