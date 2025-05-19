@@ -40,7 +40,7 @@ function ContactForm() {
 				body: JSON.stringify({
 					chat_id: telegramChatId,
 					text: `Name: ${values.name}:
-Email: ${values.email}:
+Phone: ${values.phone}:
 Message: ${values.message}`,
 				}),
 			}
@@ -49,9 +49,10 @@ Message: ${values.message}`,
 			.finally(() => setIsLoading(false))
 
 		toast.promise(promise, {
-			loading: 'Loading...',
-			success: 'Successfully sent!',
-			error: 'Something went wrong!',
+			loading: 'Buyurtma yuborilmoqda...',
+			success: 'Buyurtmangiz muvaffaqiyatli yuborildi!',
+			error: "Xatolik yuz berdi! Qayta urinib ko'ring.",
+			className: 'bg-green-500 text-white',
 		})
 	}
 
@@ -77,7 +78,7 @@ Message: ${values.message}`,
 				/>
 				<FormField
 					control={form.control}
-					name='email'
+					name='phone'
 					render={({ field }) => (
 						<FormItem>
 							<FormControl>

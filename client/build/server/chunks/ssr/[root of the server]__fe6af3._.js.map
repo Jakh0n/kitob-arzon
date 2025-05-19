@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///Users/jahkon/Desktop/Redopia/client/components/providers/session.provider.tsx"],"sourcesContent":["'use client'\nimport { ChildProps } from '@/types'\nimport React from 'react'\nimport { SessionProvider as Session } from 'next-auth/react'\n\nfunction SessionProvider({ children }: ChildProps) {\n\treturn <Session>{children}</Session>\n}\n\nexport default SessionProvider\n"],"names":[],"mappings":";;;;AAGA;AAHA;;;AAKA,SAAS,gBAAgB,EAAE,QAAQ,EAAc;IAChD,qBAAO,8OAAC,8IAAA,CAAA,kBAAO;kBAAE;;;;;;AAClB;uCAEe"}},
+    {"offset": {"line": 33, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 39, "column": 0}, "map": {"version":3,"sources":["file:///Users/jahkon/Desktop/Redopia/client/components/providers/theme-provider.tsx"],"sourcesContent":["'use client'\n\nimport { ThemeProvider as NextThemesProvider } from 'next-themes'\nimport * as React from 'react'\n\nexport function ThemeProvider({\n\tchildren,\n\t...props\n}: React.ComponentProps<typeof NextThemesProvider>) {\n\treturn <NextThemesProvider {...props}>{children}</NextThemesProvider>\n}\n"],"names":[],"mappings":";;;;AAEA;AAFA;;;AAKO,SAAS,cAAc,EAC7B,QAAQ,EACR,GAAG,OAC8C;IACjD,qBAAO,8OAAC,gJAAA,CAAA,gBAAkB;QAAE,GAAG,KAAK;kBAAG;;;;;;AACxC"}},
+    {"offset": {"line": 57, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

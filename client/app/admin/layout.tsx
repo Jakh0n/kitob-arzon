@@ -1,10 +1,10 @@
+import Navbar from '@/components/shared/navbar'
+import { authOptions } from '@/lib/auth-options'
+import { getServerSession } from 'next-auth'
+import { redirect } from 'next/navigation'
+import NextTopLoader from 'nextjs-toploader'
 import React from 'react'
 import Sidebar from './_components/sidebar'
-import Navbar from '@/components/shared/navbar'
-import { getSession } from 'next-auth/react'
-import { redirect } from 'next/navigation'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/lib/auth-options'
 
 async function Layout({ children }: { children: React.ReactNode }) {
 	const session = await getServerSession(authOptions)
@@ -19,7 +19,10 @@ async function Layout({ children }: { children: React.ReactNode }) {
 				<div className='col-span-1'>
 					<Sidebar />
 				</div>
-				<div className='col-span-2 pb-10'>{children}</div>
+				<div className='col-span-2 pb-10'>
+					<NextTopLoader />
+					{children}
+				</div>
 			</div>
 		</div>
 	)

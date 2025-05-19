@@ -1,9 +1,9 @@
 import SessionProvider from '@/components/providers/session.provider'
 import { ThemeProvider } from '@/components/providers/theme-provider'
-import { Toaster } from '@/components/ui/toaster'
 import { ChildProps } from '@/types'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
+import { Toaster } from 'sonner'
 import './globals.css'
 
 const montserrat = Montserrat({
