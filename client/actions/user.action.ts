@@ -92,6 +92,7 @@ export const addFavorite = actionClient
 		)
 		return JSON.parse(JSON.stringify(data))
 	})
+
 export const stripeCheckout = actionClient
 	.schema(idSchema)
 	.action<ReturnActionType>(async ({ parsedInput }) => {

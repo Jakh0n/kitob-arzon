@@ -1,13 +1,13 @@
 import { getProduct } from '@/actions/user.action'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { authOptions } from '@/lib/auth-options'
 import { formatPrice } from '@/lib/utils'
 import { Params } from '@/types'
-import { ShoppingCart } from 'lucide-react'
+import { getServerSession } from 'next-auth'
 import Image from 'next/image'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
-
+import BuyButton from './_components/buy-button'
 interface ProductPageProps {
 	params: Params
 }
@@ -39,6 +39,9 @@ const ProductPage = async ({ params }: ProductPageProps) => {
 	const { productId } = await params
 	const res = await getProduct({ id: productId })
 	const product = res?.data?.product
+	const session = await getServerSession(authOptions)
+
+	const isLoggedIn = !!session?.currentUser
 
 	if (!product) return notFound()
 
@@ -79,12 +82,7 @@ const ProductPage = async ({ params }: ProductPageProps) => {
 					</div>
 
 					<div className='flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3'>
-						<Link href={`/contact`}>
-							<Button size='lg' variant='secondary' className='bg-green-500'>
-								<span className='text-white'>Sotib olish</span>
-								<ShoppingCart className='h-4 w-4' />
-							</Button>
-						</Link>
+						<BuyButton isLoggedIn={isLoggedIn} />
 						<Button size='lg' variant='outline'>
 							Add to Wishlist
 						</Button>

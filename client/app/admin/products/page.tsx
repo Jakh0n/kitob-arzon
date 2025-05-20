@@ -1,11 +1,11 @@
-import { Separator } from '@/components/ui/separator'
-import AddProduct from '../_components/add-product'
-import ProductCard from '../_components/product.card'
-import Filter from '@/components/shared/filter'
 import { getProducts } from '@/actions/admin.action'
+import Filter from '@/components/shared/filter'
+import Pagination from '@/components/shared/pagination'
+import { Separator } from '@/components/ui/separator'
 import { SearchParams } from '@/types'
 import { FC } from 'react'
-import Pagination from '@/components/shared/pagination'
+import AddProduct from '../_components/add-product'
+import ProductCard from '../_components/product.card'
 
 interface Props {
 	searchParams: SearchParams
