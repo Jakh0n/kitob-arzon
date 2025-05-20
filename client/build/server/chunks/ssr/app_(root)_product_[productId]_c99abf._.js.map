@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/jahkon/Desktop/Redopia/client/app/%28root%29/product/%5BproductId%5D/_components/buy-button.tsx"],"sourcesContent":["'use client'\n\nimport { Button } from '@/components/ui/button'\nimport { ShoppingCart } from 'lucide-react'\nimport { useRouter } from 'next/navigation'\nimport { FC } from 'react'\nimport { toast } from 'sonner'\n\ninterface Props {\n\tisLoggedIn: boolean\n}\n\nconst BuyButton: FC<Props> = ({ isLoggedIn }) => {\n\tconst router = useRouter()\n\n\tconst onBuy = () => {\n\t\tif (!isLoggedIn) {\n\t\t\trouter.push('/sign-in')\n\t\t\ttoast('Iltimos, tizimga kiring')\n\t\t}\n\t}\n\n\treturn (\n\t\t<Button\n\t\t\tsize='lg'\n\t\t\tvariant='secondary'\n\t\t\tclassName='bg-green-500'\n\t\t\tonClick={onBuy}\n\t\t>\n\t\t\t<span className='text-white'>Sotib olish</span>\n\t\t\t<ShoppingCart className='h-4 w-4' />\n\t\t</Button>\n\t)\n}\n\nexport default BuyButton\n"],"names":[],"mappings":";;;;AAEA;AAEA;AAEA;AAHA;AAHA;;;;;;AAYA,MAAM,YAAuB,CAAC,EAAE,UAAU,EAAE;IAC3C,MAAM,SAAS,CAAA,GAAA,kIAAA,CAAA,YAAS,AAAD;IAEvB,MAAM,QAAQ;QACb,IAAI,CAAC,YAAY;YAChB,OAAO,IAAI,CAAC;YACZ,CAAA,GAAA,wIAAA,CAAA,QAAK,AAAD,EAAE;QACP;IACD;IAEA,qBACC,8OAAC,2HAAA,CAAA,SAAM;QACN,MAAK;QACL,SAAQ;QACR,WAAU;QACV,SAAS;;0BAET,8OAAC;gBAAK,WAAU;0BAAa;;;;;;0BAC7B,8OAAC,sNAAA,CAAA,eAAY;gBAAC,WAAU;;;;;;;;;;;;AAG3B;uCAEe"}},
-    {"offset": {"line": 58, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

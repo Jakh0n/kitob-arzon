@@ -105,7 +105,7 @@ Xabar: ${values.message}`,
 											Nega bizni tanlashingiz kerak
 										</h3>
 										<p className='text-gray-600 dark:text-gray-300'>
-											✓ Eng sifatli kitoblar kolleksiyasi
+											✓ Eng sifatli kitoblar kolleksiyas
 											<br />
 											✓ Qulay va tezkor yetkazib berish
 											<br />✓ Hamyonbop narxlar

@@ -31,7 +31,7 @@ const BuyButton: FC<Props> = ({ isLoggedIn }) => {
 			className='bg-green-500'
 			onClick={onBuy}
 		>
-			<span className='text-white'>Sotib olish</span>
+			<span className='text-white'>Sotib olish uchun</span>
 			<ShoppingCart className='h-4 w-4' />
 		</Button>
 	)

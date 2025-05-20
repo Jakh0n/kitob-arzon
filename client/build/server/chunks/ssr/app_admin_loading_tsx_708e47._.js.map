@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/jahkon/Desktop/Redopia/client/app/admin/loading.tsx"],"sourcesContent":["import { Loader2 } from 'lucide-react'\n\nexport default function AdminLoading() {\n\treturn (\n\t\t<div className='fixed inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm'>\n\t\t\t<Loader2 className='h-8 w-8 animate-spin text-primary' />\n\t\t</div>\n\t)\n}\n"],"names":[],"mappings":";;;;AAAA;;;AAEe,SAAS;IACvB,qBACC,8OAAC;QAAI,WAAU;kBACd,cAAA,8OAAC,iNAAA,CAAA,UAAO;YAAC,WAAU;;;;;;;;;;;AAGtB"}},
-    {"offset": {"line": 30, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}
