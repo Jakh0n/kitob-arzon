@@ -12,6 +12,11 @@
 
 # production
 /build
+client/build/
+client/build/cache/
+client/build/cache/webpack/
+client/build/cache/webpack/*/
+client/build/cache/webpack/*/*.pack
 
 # misc
 .DS_Store
