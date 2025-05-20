@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { toast } from '@/hooks/use-toast'
 import { contactSchema } from '@/lib/validation/index'
 import { zodResolver } from '@hookform/resolvers/zod'
 import {
@@ -24,7 +25,6 @@ import {
 } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { toast } from 'sonner'
 import { z } from 'zod'
 
 export default function BuyBookPage() {
@@ -63,16 +63,15 @@ Xabar: ${values.message}`,
 			.then(() => form.reset())
 			.finally(() => setIsLoading(false))
 
-		toast.promise(promise, {
-			loading: 'Buyurtma yuborilmoqda...',
-			success: 'Buyurtmangiz muvaffaqiyatli yuborildi!',
-			error: "Xatolik yuz berdi! Qayta urinib ko'ring.",
+		toast({
+			title: 'Buyurtma yuborildi',
+			description: "Biz siz bilan tez orada bog'lanamiz",
 		})
 	}
 
 	return (
-		<div className='container mx-auto py-12 px-4 md:px-6 bg-gradient-to-b from-white to-amber-50 dark:from-slate-900 dark:to-slate-800'>
-			<h1 className='text-4xl font-bold text-center mb-4 text-amber-800 dark:text-amber-400'>
+		<div className='container mx-auto py-12 px-4 md:px-6 bg-gradient-to-b from-white to-green-50 dark:from-slate-900 dark:to-slate-800'>
+			<h1 className='text-4xl font-bold text-center mb-4 text-green-800 dark:text-green-400'>
 				Kitob buyurtma berish
 			</h1>
 			<p className='text-center mb-10 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto'>
@@ -84,9 +83,9 @@ Xabar: ${values.message}`,
 				{/* Left Column - Information */}
 				<div className='flex flex-col justify-center'>
 					<Card className='shadow-lg bg-white dark:bg-slate-900 border-0 overflow-hidden relative'>
-						<div className='absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-amber-400 to-amber-600'></div>
+						<div className='absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 to-green-600'></div>
 						<CardContent className='pt-8'>
-							<h2 className='text-2xl font-semibold mb-6 text-amber-800 dark:text-amber-400 flex items-center'>
+							<h2 className='text-2xl font-semibold mb-6 text-green-800 dark:text-green-400 flex items-center'>
 								<BookOpen className='h-6 w-6 mr-2' /> Kitoblar dunyosiga xush
 								kelibsiz
 							</h2>
@@ -98,14 +97,14 @@ Xabar: ${values.message}`,
 							</p>
 
 							<div className='space-y-6'>
-								<div className='flex items-start space-x-4 bg-amber-50 dark:bg-slate-800 p-4 rounded-lg'>
-									<Star className='h-5 w-5 text-amber-500 mt-1 flex-shrink-0' />
+								<div className='flex items-start space-x-4 bg-green-50 dark:bg-slate-800 p-4 rounded-lg'>
+									<Star className='h-5 w-5 text-green-500 mt-1 flex-shrink-0' />
 									<div>
-										<h3 className='font-medium text-amber-800 dark:text-amber-400'>
+										<h3 className='font-medium text-green-800 dark:text-green-400'>
 											Nega bizni tanlashingiz kerak
 										</h3>
 										<p className='text-gray-600 dark:text-gray-300'>
-											✓ Eng sifatli kitoblar kolleksiyas
+											✓ Eng sifatli kitoblar kolleksiyasi
 											<br />
 											✓ Qulay va tezkor yetkazib berish
 											<br />✓ Hamyonbop narxlar
@@ -114,9 +113,9 @@ Xabar: ${values.message}`,
 								</div>
 
 								<div className='flex items-start space-x-4'>
-									<ShoppingCart className='h-5 w-5 text-amber-500 mt-1 flex-shrink-0' />
+									<ShoppingCart className='h-5 w-5 text-green-500 mt-1 flex-shrink-0' />
 									<div>
-										<h3 className='font-medium text-amber-800 dark:text-amber-400'>
+										<h3 className='font-medium text-green-800 dark:text-green-400'>
 											Buyurtma berish oson
 										</h3>
 										<p className='text-gray-600 dark:text-gray-300'>
@@ -127,9 +126,9 @@ Xabar: ${values.message}`,
 								</div>
 
 								<div className='flex items-start space-x-4'>
-									<Phone className='h-5 w-5 text-amber-500 mt-1 flex-shrink-0' />
+									<Phone className='h-5 w-5 text-green-500 mt-1 flex-shrink-0' />
 									<div>
-										<h3 className='font-medium text-amber-800 dark:text-amber-400'>
+										<h3 className='font-medium text-green-800 dark:text-green-400'>
 											Bizga qo'ng'iroq qiling
 										</h3>
 										<p className='text-gray-600 dark:text-gray-300'>
@@ -139,9 +138,9 @@ Xabar: ${values.message}`,
 								</div>
 
 								<div className='flex items-start space-x-4'>
-									<Clock className='h-5 w-5 text-amber-500 mt-1 flex-shrink-0' />
+									<Clock className='h-5 w-5 text-green-500 mt-1 flex-shrink-0' />
 									<div>
-										<h3 className='font-medium text-amber-800 dark:text-amber-400'>
+										<h3 className='font-medium text-green-800 dark:text-green-400'>
 											Ish vaqtimiz
 										</h3>
 										<p className='text-gray-600 dark:text-gray-300'>
@@ -159,9 +158,9 @@ Xabar: ${values.message}`,
 				{/* Right Column - Order Form */}
 				<div>
 					<Card className='shadow-lg bg-white dark:bg-slate-900 border-0 overflow-hidden relative'>
-						<div className='absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-amber-400 to-amber-600'></div>
+						<div className='absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 to-green-600'></div>
 						<CardContent className='pt-8'>
-							<h2 className='text-2xl font-semibold mb-6 text-amber-800 dark:text-amber-400'>
+							<h2 className='text-2xl font-semibold mb-6 text-green-800 dark:text-green-400'>
 								Kitob buyurtma berish
 							</h2>
 
@@ -180,10 +179,10 @@ Xabar: ${values.message}`,
 														<Input
 															placeholder='Kitob nomi'
 															disabled={isLoading}
-															className='pl-10 bg-amber-50 dark:bg-slate-800 border-amber-200 dark:border-slate-700 focus:border-amber-400 dark:focus:border-amber-500'
+															className='pl-10 bg-green-50 dark:bg-slate-800 border-green-200 dark:border-slate-700 focus:border-green-400 dark:focus:border-green-500'
 															{...field}
 														/>
-														<BookOpen className='absolute left-3 top-2.5 h-5 w-5 text-amber-500' />
+														<BookOpen className='absolute left-3 top-2.5 h-5 w-5 text-green-500' />
 													</div>
 												</FormControl>
 												<FormMessage />
@@ -201,10 +200,10 @@ Xabar: ${values.message}`,
 														<Input
 															placeholder='Telefon raqamingiz'
 															disabled={isLoading}
-															className='pl-10 bg-amber-50 dark:bg-slate-800 border-amber-200 dark:border-slate-700 focus:border-amber-400 dark:focus:border-amber-500'
+															className='pl-10 bg-green-50 dark:bg-slate-800 border-green-200 dark:border-slate-700 focus:border-green-400 dark:focus:border-green-500'
 															{...field}
 														/>
-														<Phone className='absolute left-3 top-2.5 h-5 w-5 text-amber-500' />
+														<Phone className='absolute left-3 top-2.5 h-5 w-5 text-green-500' />
 													</div>
 												</FormControl>
 												<FormMessage />
@@ -220,12 +219,12 @@ Xabar: ${values.message}`,
 												<FormControl>
 													<div className='relative'>
 														<Textarea
-															className='resize-none h-32 pl-10 pt-8 bg-amber-50 dark:bg-slate-800 border-amber-200 dark:border-slate-700 focus:border-amber-400 dark:focus:border-amber-500'
+															className='resize-none h-32 pl-10 pt-8 bg-green-50 dark:bg-slate-800 border-green-200 dark:border-slate-700 focus:border-green-400 dark:focus:border-green-500'
 															placeholder="Qo'shimcha ma'lumotlar (kitob muallifi, nashriyot va boshqa)"
 															disabled={isLoading}
 															{...field}
 														/>
-														<MessageSquare className='absolute left-3 top-2.5 h-5 w-5 text-amber-500' />
+														<MessageSquare className='absolute left-3 top-2.5 h-5 w-5 text-green-500' />
 													</div>
 												</FormControl>
 												<FormMessage />
@@ -234,7 +233,7 @@ Xabar: ${values.message}`,
 									/>
 
 									<Button
-										className='w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white'
+										className='w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white'
 										size='lg'
 										type='submit'
 										disabled={isLoading}

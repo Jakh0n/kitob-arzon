@@ -13,9 +13,57 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-	title: 'Readopia',
-	description: 'Readopia is a platform for reading books',
-	icons: { icon: '/favicon.svg' },
+	metadataBase: new URL('https://kitob-arzon-frontend.vercel.app/'),
+	title: "Arzon kitob | Koreyada eng arzon kitoblar do'koni",
+	description:
+		"Koreyada yashovchi o'zbeklar uchun eng arzon va eng yangi kitoblarni taklif qilamiz. O'zbek, rus va ingliz tillaridagi kitoblarni online buyurtma qiling.",
+	authors: [
+		{
+			name: 'Jakhon Yokubov',
+			url: 'https://kitob-arzon-frontend.vercel.app',
+		},
+	],
+	icons: { icon: '/logo.svg' },
+	openGraph: {
+		title: "Arzon kitob | Koreyada eng arzon kitoblar do'koni",
+		description:
+			"Koreyada yashovchi o'zbeklar uchun eng arzon va eng yangi kitoblarni taklif qilamiz. O'zbek, rus va ingliz tillaridagi kitoblarni online buyurtma qiling.",
+		type: 'website',
+		url: 'https://kitob-arzon-frontend.vercel.app',
+		locale: 'uz-UZ',
+		images: 'https://media.graphassets.com/f4jkBWQ6SVaKwySKRNQT',
+		countryName: 'Korea',
+		siteName: 'Arzon kitob',
+		emails: 'info@kitob-arzon-frontend.vercel.app',
+	},
+	keywords: [
+		'kitob dukoni Koreyada',
+		'Koreyada kitob sotish',
+		"Koreyada o'zbek kitoblari",
+		"Koreyada kitob do'koni",
+		'arzon kitoblar Koreyada',
+		'Koreyada yangi kitoblar',
+		"Koreyada o'zbek tilidagi kitoblar",
+		'Koreyada kutubxona',
+		'kitoblar Koreyada online',
+		"Koreyada o'quv adabiyotlari",
+		'Koreyada kitob buyurtma qilish',
+		"kitob do'koni Seoul",
+		"Koreyada o'quv kitoblari",
+		'한국 책방',
+		'서울 책방',
+		'cheap books in Korea',
+		'Uzbek books in Korea',
+		'Korean bookstore online',
+		'buy books in Korea',
+		'Korean bookstore for foreigners',
+		"Koreyada o'zbeklar uchun kitoblar",
+		"Seul kitob do'koni",
+		'Koreyada rus kitoblari',
+		'Koreyada ingliz kitoblari',
+		"online kitob do'koni Koreyada",
+		'Koreyada kitob yetkazib berish',
+	],
 }
 
 export default function RootLayout({ children }: ChildProps) {

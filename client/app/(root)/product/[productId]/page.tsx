@@ -92,5 +92,4 @@ const ProductPage = async ({ params }: ProductPageProps) => {
 		</div>
 	)
 }
-
 export default ProductPage
