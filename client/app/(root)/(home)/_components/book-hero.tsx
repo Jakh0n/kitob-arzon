@@ -18,7 +18,7 @@ const BookHero = ({ featuredBook }: BookHeroProps) => {
 							{featuredBook.title}
 						</h1>
 					</div>
-					<p className='max-w-[600px] text-muted-foreground md:text-lg'>
+					<p className='max-w-[600px] text-muted-foreground md:text-lg line-clamp-6'>
 						{featuredBook.description}
 					</p>
 					<div className='flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3'>

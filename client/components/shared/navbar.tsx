@@ -1,5 +1,11 @@
+import {
+	Sheet,
+	SheetContent,
+	SheetTitle,
+	SheetTrigger,
+} from '@/components/ui/sheet'
 import { authOptions } from '@/lib/auth-options'
-import { User } from 'lucide-react'
+import { Home, Menu, Package, User } from 'lucide-react'
 import { getServerSession } from 'next-auth'
 import Link from 'next/link'
 import { Button } from '../ui/button'
@@ -29,7 +35,8 @@ async function Navbar() {
 			<div className='container mx-auto flex justify-between items-center'>
 				<Logo />
 				<div className='flex items-center gap-2'>
-					<div className='flex items-center gap-4 md:gap-6'>
+					{/* Desktop Menu */}
+					<div className='hidden md:flex items-center gap-4 md:gap-6'>
 						<Link
 							href='/'
 							className='text-sm font-medium transition-colors hover:text-primary'
@@ -43,6 +50,32 @@ async function Navbar() {
 							All Products
 						</Link>
 					</div>
+
+					{/* Mobile Menu */}
+					<Sheet>
+						<SheetTrigger asChild className='md:hidden'>
+							<Button variant='ghost' size='icon'>
+								<Menu className='h-5 w-5' />
+							</Button>
+						</SheetTrigger>
+						<SheetContent side='right'>
+							<SheetTitle className='text-xl font-bold mb-4'>Menu</SheetTitle>
+							<div className='flex flex-col gap-4'>
+								<Link href='/' className='flex items-center gap-2'>
+									<Home className='h-5 w-5' />
+									<span className='text-sm font-medium transition-colors hover:text-primary'>
+										Home
+									</span>
+								</Link>
+								<Link href='/products' className='flex items-center gap-2'>
+									<Package className='h-5 w-5' />
+									<span className='text-sm font-medium transition-colors hover:text-primary'>
+										All Products
+									</span>
+								</Link>
+							</div>
+						</SheetContent>
+					</Sheet>
 
 					<ModeToggle />
 					<div className='flex items-center gap-2 '>

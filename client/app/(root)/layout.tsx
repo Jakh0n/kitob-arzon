@@ -5,7 +5,7 @@ function Layout({ children }: ChildProps) {
 	return (
 		<div>
 			<Navbar />
-			<main className='container max-w-6xl mt-24'>{children}</main>
+			<main className='max-w-6xl mt-24'>{children}</main>
 		</div>
 	)
 }

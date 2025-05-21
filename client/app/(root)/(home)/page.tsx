@@ -13,7 +13,7 @@ const Page = async ({ searchParams }: Props) => {
 	const { q, filter, category, page } = await searchParams
 	const res = await getProducts({
 		searchQuery: `${q || ''}`,
-		filter: `${filter || 'newest'}`,
+		filter: `${filter || ''}`,
 		category: `${category || ''}`,
 		page: `${page || '1'}`,
 	})
@@ -27,12 +27,12 @@ const Page = async ({ searchParams }: Props) => {
 
 	return (
 		<>
-			{featuredBook && <BookHero featuredBook={featuredBook} />}
-			<div className='flex items-center justify-between mt-10'>
-				<h1 className='font-bold'>Products</h1>
-				<div className='max-sm:hidden '>
-					<Filter />
-				</div>
+			<div className='max-sm:hidden'>
+				{featuredBook && <BookHero featuredBook={featuredBook} />}
+			</div>
+			<div className=' w-full flex items-center   mt-10 '>
+				<h1 className='font-bold mr-4'>Products</h1>
+				<Filter />
 			</div>
 
 			<Separator className='my-4' />

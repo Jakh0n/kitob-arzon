@@ -47,9 +47,9 @@ const ProductCard: FC<Props> = ({ product }) => {
 			onClick={() => router.push(`/product/${product._id}`)}
 			onMouseEnter={() => setIsHovering(true)}
 			onMouseLeave={() => setIsHovering(false)}
-			className='cursor-pointer group rounded-lg overflow-hidden transition-all duration-300 hover:translate-y-[-5px] bg-white dark:bg-gray-800 shadow-md hover:shadow-xl'
+			className='cursor-pointer group rounded-lg overflow-hidden transition-all duration-300 hover:translate-y-[-5px] bg-white dark:bg-gray-800 shadow-md hover:shadow-xl '
 		>
-			<div className='relative h-[250px] overflow-hidden'>
+			<div className='relative h-[190px] lg:h-[250px] overflow-hidden'>
 				<Image
 					src={product.image!}
 					fill
@@ -76,8 +76,8 @@ const ProductCard: FC<Props> = ({ product }) => {
 					</span>
 				</div>
 			</div>
-			<div className='p-4'>
-				<div className='flex justify-between items-center mb-2'>
+			<div className='p-2 lg:p-6  gap-2'>
+				<div className='block lg:flex justify-between items-center lg:mb-4'>
 					<TooltipProvider>
 						<Tooltip>
 							<TooltipTrigger asChild>
@@ -86,12 +86,14 @@ const ProductCard: FC<Props> = ({ product }) => {
 								</h1>
 							</TooltipTrigger>
 							<TooltipContent>
-								<p className='max-w-xs '>{product.title}</p>
+								<p className='max-w-xs text-xs lg:text-base '>
+									{product.title}
+								</p>
 							</TooltipContent>
 						</Tooltip>
 					</TooltipProvider>
 					<NoSSR>
-						<p className='font-semibold text-primary'>
+						<p className='font-normal lg:font-semibold text-xs lg:text-base text-primary'>
 							{formatPrice(product.price!)}
 						</p>
 					</NoSSR>

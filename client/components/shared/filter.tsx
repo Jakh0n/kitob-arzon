@@ -1,6 +1,11 @@
 'use client'
 
+import { categories } from '@/constants'
+import { cn, formUrlQuery, removeUrlQuery } from '@/lib/utils'
+import { debounce } from 'lodash'
 import { Search } from 'lucide-react'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { useCallback } from 'react'
 import { Input } from '../ui/input'
 import {
 	Select,
@@ -9,11 +14,6 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '../ui/select'
-import { cn, formUrlQuery, removeUrlQuery } from '@/lib/utils'
-import { useRouter, useSearchParams } from 'next/navigation'
-import { debounce } from 'lodash'
-import { FC, useCallback } from 'react'
-import { categories } from '@/constants'
 
 interface Props {
 	showCategory?: boolean
@@ -63,11 +63,11 @@ const Filter = ({ showCategory }: Props) => {
 	return (
 		<div
 			className={cn(
-				'gap-1 max-md:w-full grid max-md:grid-cols-2 md:grid-cols-2 ',
+				' gap-1 w-full flex items-center justify-end',
 				showCategory ? 'grid-cols-3' : 'grid-cols-2'
 			)}
 		>
-			<div className='flex items-center bg-secondary max-md:w-1/2 border rounded-md'>
+			<div className='flex items-center bg-secondary  border rounded-md'>
 				<Input
 					placeholder='Qidirish'
 					className='text-xs border-none no-focus'
@@ -77,13 +77,13 @@ const Filter = ({ showCategory }: Props) => {
 			</div>
 			<div>
 				<Select onValueChange={onFilterChange}>
-					<SelectTrigger className='bg-secondary text-xs max-md:w-1/2'>
+					<SelectTrigger className='bg-secondary text-xs  '>
 						<SelectValue
 							placeholder='Select filter'
 							className='text-muted-foreground'
 						/>
 					</SelectTrigger>
-					<SelectContent>
+					<SelectContent className='bg-secondary'>
 						<SelectItem className='cursor-pointer' value='newest'>
 							Newest
 						</SelectItem>
@@ -96,7 +96,7 @@ const Filter = ({ showCategory }: Props) => {
 
 			{showCategory && (
 				<Select onValueChange={onCategoryChange}>
-					<SelectTrigger className='bg-secondary text-xs max-md:w-1/2'>
+					<SelectTrigger className='bg-secondary text-xs '>
 						<SelectValue
 							placeholder='Select category'
 							className='text-muted-foreground'
