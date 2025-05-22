@@ -7,7 +7,11 @@ import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-const Sidebar = () => {
+interface SidebarProps {
+	onClose?: () => void
+}
+
+const Sidebar = ({ onClose }: SidebarProps) => {
 	const pathname = usePathname()
 
 	return (
@@ -25,7 +29,7 @@ const Sidebar = () => {
 							pathname == item.route && 'font-bold'
 						)}
 					>
-						<Link href={item.route}>
+						<Link href={item.route} onClick={onClose}>
 							<item.icon />
 							<span>{item.name}</span>
 						</Link>
