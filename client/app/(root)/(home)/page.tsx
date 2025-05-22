@@ -27,7 +27,7 @@ const Page = async ({ searchParams }: Props) => {
 
 	return (
 		<>
-			<div className='max-sm:hidden'>
+			<div className='max-sm:hidden '>
 				{featuredBook && <BookHero featuredBook={featuredBook} />}
 			</div>
 			<div className=' w-full flex items-center   mt-10 '>
@@ -37,7 +37,7 @@ const Page = async ({ searchParams }: Props) => {
 
 			<Separator className='my-4' />
 
-			<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+			<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4'>
 				{products &&
 					products.map(product => (
 						<ProductCard key={product._id} product={product} />

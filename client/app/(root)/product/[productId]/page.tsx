@@ -46,10 +46,11 @@ const ProductPage = async ({ params }: ProductPageProps) => {
 	if (!product) return notFound()
 
 	return (
-		<div className='container py-12'>
-			<div className='grid gap-6 lg:grid-cols-2'>
+		<div className='container py-6 md:py-12'>
+			<div className='grid gap-8 lg:grid-cols-2'>
+				{/* Image Section */}
 				<div className='flex items-center justify-center lg:justify-end'>
-					<div className='relative h-[500px] w-[350px] overflow-hidden rounded-lg shadow-lg'>
+					<div className='relative h-[300px] w-[250px] md:h-[400px] md:w-[300px] lg:h-[500px] lg:w-[350px] overflow-hidden rounded-xl shadow-xl transition-all duration-300 hover:shadow-2xl'>
 						<Image
 							src={product.image || '/images/placeholder.jpg'}
 							alt={product.title}
@@ -59,31 +60,37 @@ const ProductPage = async ({ params }: ProductPageProps) => {
 						/>
 					</div>
 				</div>
-				<div className='flex flex-col justify-center space-y-6'>
+
+				{/* Content Section */}
+				<div className='flex flex-col justify-center space-y-6 px-4 md:px-0'>
 					<div className='space-y-2'>
-						<h1 className='text-3xl font-bold tracking-tight sm:text-4xl'>
+						<h1 className='text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight'>
 							{product.title}
 						</h1>
 					</div>
 
 					<div className='flex items-center gap-2'>
-						<Badge className='w-fit' variant={'secondary'}>
+						<Badge className='w-fit text-sm md:text-base' variant={'secondary'}>
 							# {product.category}
 						</Badge>
 					</div>
 
-					<p className='text-muted-foreground'>{product.description}</p>
+					<p className='text-sm md:text-base text-muted-foreground leading-relaxed'>
+						{product.description}
+					</p>
 
-					<div className='flex flex-col gap-2'>
+					<div className='flex flex-col gap-2 bg-muted/50 p-4 rounded-lg'>
 						<div className='flex items-center gap-2'>
-							<span className='font-semibold'>Price:</span>
-							<span>{formatPrice(product.price)}</span>
+							<span className='font-semibold text-base md:text-lg'>Narxi:</span>
+							<span className='text-primary font-bold text-lg md:text-xl'>
+								{formatPrice(product.price)}
+							</span>
 						</div>
 					</div>
 
 					<div className='flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3'>
 						<BuyButton isLoggedIn={isLoggedIn} />
-						<Button size='lg' variant='outline'>
+						<Button size='lg' variant='outline' className='w-full sm:w-auto'>
 							Add to Wishlist
 						</Button>
 					</div>
