@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 			url: 'https://kitob-arzon-frontend.vercel.app',
 		},
 	],
-	icons: { icon: '/logo.svg' },
+	icons: { icon: '/logo.webp' },
 	openGraph: {
 		title: "Arzon kitob | Koreyada eng arzon kitoblar do'koni",
 		description:
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 		type: 'website',
 		url: 'https://kitob-arzon-frontend.vercel.app',
 		locale: 'uz-UZ',
-		images: 'https://media.graphassets.com/f4jkBWQ6SVaKwySKRNQT',
+		images: '/logo.webp',
 		countryName: 'Korea',
 		siteName: 'Arzon kitob',
 		emails: 'info@kitob-arzon-frontend.vercel.app',

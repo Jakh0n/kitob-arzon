@@ -3,6 +3,7 @@ import { authOptions } from '@/lib/auth-options'
 import { getServerSession } from 'next-auth'
 import { redirect } from 'next/navigation'
 import React from 'react'
+import MobileSidebar from './_components/mobile-sidebar'
 import Sidebar from './_components/sidebar'
 
 async function Layout({ children }: { children: React.ReactNode }) {
@@ -13,11 +14,16 @@ async function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<div>
 			<Navbar session={session} />
-			<div className='grid grid-cols-3 gap-4'>
-				<div className='col-span-1'>
+			<div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+				{/* Mobile Sidebar Component */}
+				<MobileSidebar />
+
+				{/* Desktop Sidebar */}
+				<div className='hidden md:block md:col-span-1'>
 					<Sidebar />
 				</div>
-				<div className='col-span-2 pb-10'>{children}</div>
+
+				<div className='col-span-1 md:col-span-2 pb-10'>{children}</div>
 			</div>
 		</div>
 	)
