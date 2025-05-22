@@ -19,10 +19,10 @@ const Sidebar = () => {
 					<Button
 						key={item.route}
 						asChild
-						variant={pathname == item.route ? 'secondary' : 'ghost'}
+						variant={pathname === item.route ? 'secondary' : 'ghost'}
 						className={cn(
 							'flex justify-start',
-							pathname == item.route && 'font-bold'
+							pathname === item.route && 'font-bold'
 						)}
 					>
 						<Link href={item.route}>

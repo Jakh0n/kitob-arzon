@@ -44,61 +44,58 @@ export default function BuyBookPage() {
 		const telegramBotId = process.env.NEXT_PUBLIC_TETELGRAM_BOT_API!
 		const telegramChatId = process.env.NEXT_PUBLIC_TETELGRAM_CHAT_ID!
 
-		const promise = fetch(
-			`https://api.telegram.org/bot${telegramBotId}/sendMessage`,
-			{
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					'cache-control': 'no-cache',
-				},
-				body: JSON.stringify({
-					chat_id: telegramChatId,
-					text: `Kitob nomi: ${values.name}:
+		fetch(`https://api.telegram.org/bot${telegramBotId}/sendMessage`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'cache-control': 'no-cache',
+			},
+			body: JSON.stringify({
+				chat_id: telegramChatId,
+				text: `Kitob nomi: ${values.name}:
 Telefon raqami: ${values.phone}:
 Xabar: ${values.message}`,
-				}),
-			}
-		)
+			}),
+		})
 			.then(() => form.reset())
 			.finally(() => setIsLoading(false))
 
 		toast({
 			title: 'Buyurtma yuborildi',
-			description: "Biz siz bilan tez orada bog'lanamiz",
+			description: 'Biz siz bilan tez orada bog&apos;lanamiz',
 		})
 	}
 
 	return (
-		<div className='container mx-auto py-12 px-4 md:px-6 bg-gradient-to-b from-white to-green-50 dark:from-slate-900 dark:to-slate-800'>
-			<h1 className='text-4xl font-bold text-center mb-4 text-green-800 dark:text-green-400'>
+		<div className='container mx-auto bg-gradient-to-b from-white to-green-50 px-4 py-12 dark:from-slate-900 dark:to-slate-800 md:px-6'>
+			<h1 className='mb-4 text-center text-4xl font-bold text-green-800 dark:text-green-400'>
 				Kitob buyurtma berish
 			</h1>
-			<p className='text-center mb-10 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto'>
+			<p className='mx-auto mb-10 max-w-2xl text-center text-gray-600 dark:text-gray-300'>
 				Sevimli kitobingizni tanlang va bizga buyurtma bering! Biz siz bilan tez
-				orada bog'lanamiz.
+				orada bog&apos;lanamiz.
 			</p>
 
-			<div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+			<div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
 				{/* Left Column - Information */}
 				<div className='flex flex-col justify-center'>
-					<Card className='shadow-lg bg-white dark:bg-slate-900 border-0 overflow-hidden relative'>
-						<div className='absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 to-green-600'></div>
+					<Card className='relative overflow-hidden border-0 bg-white shadow-lg dark:bg-slate-900'>
+						<div className='absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-green-400 to-green-600'></div>
 						<CardContent className='pt-8'>
-							<h2 className='text-2xl font-semibold mb-6 text-green-800 dark:text-green-400 flex items-center'>
-								<BookOpen className='h-6 w-6 mr-2' /> Kitoblar dunyosiga xush
+							<h2 className='mb-6 flex items-center text-2xl font-semibold text-green-800 dark:text-green-400'>
+								<BookOpen className='mr-2 size-6' /> Kitoblar dunyosiga xush
 								kelibsiz
 							</h2>
 
-							<p className='text-gray-600 dark:text-gray-300 mb-8'>
+							<p className='mb-8 text-gray-600 dark:text-gray-300'>
 								Bizning kutubxonamizda siz eng sara kitoblarni topishingiz
 								mumkin. Maʼnaviy ozuqa olish va bilimlaringizni oshirish uchun
 								ajoyib imkoniyat!
 							</p>
 
 							<div className='space-y-6'>
-								<div className='flex items-start space-x-4 bg-green-50 dark:bg-slate-800 p-4 rounded-lg'>
-									<Star className='h-5 w-5 text-green-500 mt-1 flex-shrink-0' />
+								<div className='flex items-start space-x-4 rounded-lg bg-green-50 p-4 dark:bg-slate-800'>
+									<Star className='mt-1 size-5 shrink-0 text-green-500' />
 									<div>
 										<h3 className='font-medium text-green-800 dark:text-green-400'>
 											Nega bizni tanlashingiz kerak
@@ -113,7 +110,7 @@ Xabar: ${values.message}`,
 								</div>
 
 								<div className='flex items-start space-x-4'>
-									<ShoppingCart className='h-5 w-5 text-green-500 mt-1 flex-shrink-0' />
+									<ShoppingCart className='mt-1 size-5 shrink-0 text-green-500' />
 									<div>
 										<h3 className='font-medium text-green-800 dark:text-green-400'>
 											Buyurtma berish oson
@@ -126,10 +123,10 @@ Xabar: ${values.message}`,
 								</div>
 
 								<div className='flex items-start space-x-4'>
-									<Phone className='h-5 w-5 text-green-500 mt-1 flex-shrink-0' />
+									<Phone className='mt-1 size-5 shrink-0 text-green-500' />
 									<div>
 										<h3 className='font-medium text-green-800 dark:text-green-400'>
-											Bizga qo'ng'iroq qiling
+											Bizga qo&apos;ng&apos;iroq qiling
 										</h3>
 										<p className='text-gray-600 dark:text-gray-300'>
 											+998 90 123 45 67
@@ -138,7 +135,7 @@ Xabar: ${values.message}`,
 								</div>
 
 								<div className='flex items-start space-x-4'>
-									<Clock className='h-5 w-5 text-green-500 mt-1 flex-shrink-0' />
+									<Clock className='mt-1 size-5 shrink-0 text-green-500' />
 									<div>
 										<h3 className='font-medium text-green-800 dark:text-green-400'>
 											Ish vaqtimiz
@@ -157,17 +154,17 @@ Xabar: ${values.message}`,
 
 				{/* Right Column - Order Form */}
 				<div>
-					<Card className='shadow-lg bg-white dark:bg-slate-900 border-0 overflow-hidden relative'>
-						<div className='absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 to-green-600'></div>
+					<Card className='relative overflow-hidden border-0 bg-white shadow-lg dark:bg-slate-900'>
+						<div className='absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-green-400 to-green-600'></div>
 						<CardContent className='pt-8'>
-							<h2 className='text-2xl font-semibold mb-6 text-green-800 dark:text-green-400'>
+							<h2 className='mb-6 text-2xl font-semibold text-green-800 dark:text-green-400'>
 								Kitob buyurtma berish
 							</h2>
 
 							<Form {...form}>
 								<form
-									onSubmit={form.handleSubmit(onSubmit)}
 									className='space-y-6'
+									onSubmit={form.handleSubmit(onSubmit)}
 								>
 									<FormField
 										control={form.control}
@@ -177,12 +174,12 @@ Xabar: ${values.message}`,
 												<FormControl>
 													<div className='relative'>
 														<Input
-															placeholder='Kitob nomi'
+															className='border-green-200 bg-green-50 pl-10 focus:border-green-400 dark:border-slate-700 dark:bg-slate-800 dark:focus:border-green-500'
 															disabled={isLoading}
-															className='pl-10 bg-green-50 dark:bg-slate-800 border-green-200 dark:border-slate-700 focus:border-green-400 dark:focus:border-green-500'
+															placeholder='Kitob nomi'
 															{...field}
 														/>
-														<BookOpen className='absolute left-3 top-2.5 h-5 w-5 text-green-500' />
+														<BookOpen className='absolute left-3 top-2.5 size-5 text-green-500' />
 													</div>
 												</FormControl>
 												<FormMessage />
@@ -198,12 +195,12 @@ Xabar: ${values.message}`,
 												<FormControl>
 													<div className='relative'>
 														<Input
-															placeholder='Telefon raqamingiz'
+															className='border-green-200 bg-green-50 pl-10 focus:border-green-400 dark:border-slate-700 dark:bg-slate-800 dark:focus:border-green-500'
 															disabled={isLoading}
-															className='pl-10 bg-green-50 dark:bg-slate-800 border-green-200 dark:border-slate-700 focus:border-green-400 dark:focus:border-green-500'
+															placeholder='Telefon raqamingiz'
 															{...field}
 														/>
-														<Phone className='absolute left-3 top-2.5 h-5 w-5 text-green-500' />
+														<Phone className='absolute left-3 top-2.5 size-5 text-green-500' />
 													</div>
 												</FormControl>
 												<FormMessage />
@@ -219,12 +216,12 @@ Xabar: ${values.message}`,
 												<FormControl>
 													<div className='relative'>
 														<Textarea
-															className='resize-none h-32 pl-10 pt-8 bg-green-50 dark:bg-slate-800 border-green-200 dark:border-slate-700 focus:border-green-400 dark:focus:border-green-500'
-															placeholder="Qo'shimcha ma'lumotlar (kitob muallifi, nashriyot va boshqa)"
+															className='h-32 resize-none border-green-200 bg-green-50 pl-10 pt-8 focus:border-green-400 dark:border-slate-700 dark:bg-slate-800 dark:focus:border-green-500'
 															disabled={isLoading}
+															placeholder="Qo'shimcha ma'lumotlar (kitob muallifi, nashriyot va boshqa)"
 															{...field}
 														/>
-														<MessageSquare className='absolute left-3 top-2.5 h-5 w-5 text-green-500' />
+														<MessageSquare className='absolute left-3 top-2.5 size-5 text-green-500' />
 													</div>
 												</FormControl>
 												<FormMessage />
@@ -233,20 +230,20 @@ Xabar: ${values.message}`,
 									/>
 
 									<Button
-										className='w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white'
+										className='w-full bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700'
+										disabled={isLoading}
 										size='lg'
 										type='submit'
-										disabled={isLoading}
 									>
 										<span>Buyurtma berish</span>
-										<Send className='w-4 h-4 ml-2' />
+										<Send className='ml-2 size-4' />
 									</Button>
 								</form>
 							</Form>
 
-							<div className='mt-6 text-sm text-center text-gray-500 dark:text-gray-400'>
-								Buyurtmangizni qabul qilganimizdan so'ng, 24 soat ichida siz
-								bilan bog'lanamiz
+							<div className='mt-6 text-center text-sm text-gray-500 dark:text-gray-400'>
+								Buyurtmangizni qabul qilganimizdan so&apos;ng, 24 soat ichida
+								siz bilan bog&apos;lanamiz
 							</div>
 						</CardContent>
 					</Card>

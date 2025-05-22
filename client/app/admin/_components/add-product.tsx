@@ -29,7 +29,6 @@ import {
 	SheetDescription,
 	SheetHeader,
 	SheetTitle,
-	SheetTrigger,
 } from '@/components/ui/sheet'
 import { Textarea } from '@/components/ui/textarea'
 import { categories } from '@/constants'
@@ -118,7 +117,7 @@ const AddProduct = () => {
 		if (product) {
 			form.reset({ ...product, price: product.price.toString() })
 		}
-	}, [product])
+	}, [product, form])
 
 	return (
 		<>

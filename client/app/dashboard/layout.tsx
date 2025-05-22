@@ -1,9 +1,9 @@
+import Navbar from '@/components/shared/navbar'
+import { authOptions } from '@/lib/auth-options'
+import { getServerSession } from 'next-auth'
+import { redirect } from 'next/navigation'
 import React from 'react'
 import Sidebar from './_components/sidebar'
-import Navbar from '@/components/shared/navbar'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/lib/auth-options'
-import { redirect } from 'next/navigation'
 
 async function Layout({ children }: { children: React.ReactNode }) {
 	const session = await getServerSession(authOptions)
@@ -12,7 +12,7 @@ async function Layout({ children }: { children: React.ReactNode }) {
 
 	return (
 		<div>
-			<Navbar />
+			<Navbar session={session} />
 			<div className='grid grid-cols-3 gap-4'>
 				<div className='col-span-1'>
 					<Sidebar />

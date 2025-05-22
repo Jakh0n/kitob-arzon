@@ -12,16 +12,16 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import {
+	InputOTP,
 	InputOTPGroup,
 	InputOTPSeparator,
 	InputOTPSlot,
-	InputOTP,
 } from '@/components/ui/input-otp'
 import { Label } from '@/components/ui/label'
 import { Separator } from '@/components/ui/separator'
 import UseAction from '@/hooks/use-action'
 import { toast } from '@/hooks/use-toast'
-import { registerSchema, otpSchema } from '@/lib/validation'
+import { otpSchema, registerSchema } from '@/lib/validation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Loader } from 'lucide-react'
 import { signIn } from 'next-auth/react'
@@ -101,14 +101,14 @@ const SignUpPage = () => {
 	}
 
 	return (
-		<Card className='w-1/2 p-4 max-md:w-full'>
+		<Card className='max-md:w-full w-1/2 p-4'>
 			<h1 className='text-xl font-bold'>Sign Up</h1>
-			<p className='text-sm text-muted-foreground'>
+			<p className='text-muted-foreground text-sm'>
 				Welcome to our platform! Please sign up to create an
 			</p>
 			<Separator className='my-3' />
 			<Form {...form}>
-				<form onSubmit={form.handleSubmit(onSubmit)} className='space-y-2'>
+				<form className='space-y-2' onSubmit={form.handleSubmit(onSubmit)}>
 					<FormField
 						control={form.control}
 						name='fullName'
@@ -118,7 +118,7 @@ const SignUpPage = () => {
 								<FormControl>
 									<Input placeholder='Osman Ali' {...field} />
 								</FormControl>
-								<FormMessage className='text-xs text-red-500' />
+								<FormMessage className='text-red-500 text-xs' />
 							</FormItem>
 						)}
 					/>
@@ -131,7 +131,7 @@ const SignUpPage = () => {
 								<FormControl>
 									<Input placeholder='example@gmial.com' {...field} />
 								</FormControl>
-								<FormMessage className='text-xs text-red-500' />
+								<FormMessage className='text-red-500 text-xs' />
 							</FormItem>
 						)}
 					/>
@@ -144,12 +144,12 @@ const SignUpPage = () => {
 								<FormControl>
 									<Input placeholder='****' type='password' {...field} />
 								</FormControl>
-								<FormMessage className='text-xs text-red-500' />
+								<FormMessage className='text-red-500 text-xs' />
 							</FormItem>
 						)}
 					/>
 					{!isVerifying && (
-						<Button type='submit' disabled={isLoading}>
+						<Button disabled={isLoading} type='submit'>
 							Submit {isLoading && <Loader className='animate-spin' />}
 						</Button>
 					)}
@@ -158,14 +158,14 @@ const SignUpPage = () => {
 			{isVerifying && (
 				<Form {...otpForm}>
 					<form
+						className='mt-2 space-y-2'
 						onSubmit={otpForm.handleSubmit(onVerify)}
-						className='space-y-2 mt-2'
 					>
 						<FormField
 							control={otpForm.control}
 							name='otp'
 							render={({ field }) => (
-								<FormItem className='space-y-0 w-full'>
+								<FormItem className='w-full space-y-0'>
 									<Label>Enter OTP</Label>
 									<FormControl>
 										<InputOTP maxLength={6} {...field}>
@@ -182,19 +182,19 @@ const SignUpPage = () => {
 											</InputOTPGroup>
 										</InputOTP>
 									</FormControl>
-									<FormMessage className='text-xs text-red-500' />
+									<FormMessage className='text-red-500 text-xs' />
 								</FormItem>
 							)}
 						/>
 						<div className='flex items-center gap-1'>
-							<Button type='submit' disabled={isLoading || isResend}>
+							<Button disabled={isLoading || isResend} type='submit'>
 								Verify {isLoading && <Loader className='animate-spin' />}
 							</Button>
 							{isResend && (
 								<Button
-									type='button'
-									onClick={() => onSubmit(form.getValues())}
 									disabled={isLoading}
+									onClick={() => onSubmit(form.getValues())}
+									type='button'
 								>
 									Resend OTP {isLoading && <Loader className='animate-spin' />}
 								</Button>

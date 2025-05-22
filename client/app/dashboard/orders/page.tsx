@@ -1,5 +1,6 @@
 import { getOrders } from '@/actions/user.action'
 import Filter from '@/components/shared/filter'
+import Pagination from '@/components/shared/pagination'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import {
@@ -11,12 +12,10 @@ import {
 	TableHeader,
 	TableRow,
 } from '@/components/ui/table'
-import { products } from '@/constants'
 import { formatPrice } from '@/lib/utils'
 import { SearchParams } from '@/types'
-import React, { FC } from 'react'
 import { format } from 'date-fns'
-import Pagination from '@/components/shared/pagination'
+import { FC } from 'react'
 
 interface Props {
 	searchParams: SearchParams

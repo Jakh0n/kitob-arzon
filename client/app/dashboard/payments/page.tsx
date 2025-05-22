@@ -11,11 +11,11 @@ import {
 	TableHeader,
 	TableRow,
 } from '@/components/ui/table'
-import { products, TransactionState } from '@/constants'
+import { TransactionState } from '@/constants'
 import { cn, formatPrice, getStatusText, getStatusVariant } from '@/lib/utils'
 import { SearchParams } from '@/types'
 import Image from 'next/image'
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 interface Props {
 	searchParams: SearchParams
