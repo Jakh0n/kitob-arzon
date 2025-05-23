@@ -46,7 +46,7 @@ const ProductPage = async ({ params }: ProductPageProps) => {
 	if (!product) return notFound()
 
 	return (
-		<div className='container py-6 md:py-12'>
+		<div className=' mx-auto py-6 md:py-12'>
 			<div className='grid gap-8 lg:grid-cols-2'>
 				{/* Image Section */}
 				<div className='flex items-center justify-center lg:justify-end'>

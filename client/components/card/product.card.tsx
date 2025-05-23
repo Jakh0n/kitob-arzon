@@ -47,7 +47,7 @@ const ProductCard: FC<Props> = ({ product }) => {
 			onClick={() => router.push(`/product/${product._id}`)}
 			onMouseEnter={() => setIsHovering(true)}
 			onMouseLeave={() => setIsHovering(false)}
-			className='cursor-pointer group rounded-lg overflow-hidden transition-all duration-300 hover:translate-y-[-5px] bg-white dark:bg-gray-800 shadow-md hover:shadow-xl '
+			className='cursor-pointer group rounded-lg overflow-hidden transition-all duration-300 lg:hover:translate-y-[-5px] bg-white dark:bg-gray-800 shadow-md hover:shadow-xl '
 		>
 			<div className='relative h-[190px] lg:h-[250px] overflow-hidden'>
 				<Image
@@ -55,7 +55,7 @@ const ProductCard: FC<Props> = ({ product }) => {
 					fill
 					className={cn(
 						'mx-auto object-contain transition-transform duration-500',
-						isHovering && 'scale-105'
+						isHovering && 'lg:scale-105'
 					)}
 					alt={product.title!}
 				/>
@@ -65,12 +65,12 @@ const ProductCard: FC<Props> = ({ product }) => {
 						disabled={isLoading}
 						onClick={onFavourite}
 						variant='secondary'
-						className='rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary hover:text-white'
+						className='rounded-full opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 lg:hover:bg-primary hover:text-white backdrop-blur-sm bg-black/40'
 					>
 						<Heart className='h-5 w-5' />
 					</Button>
 				</div>
-				<div className='absolute bottom-0 left-0 w-full p-2 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+				<div className='absolute bottom-0 left-0 w-full p-2 bg-gradient-to-t from-black/60 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300'>
 					<span className='text-xs font-medium text-white px-2 py-1 rounded-full bg-primary/80'>
 						{product.category}
 					</span>
