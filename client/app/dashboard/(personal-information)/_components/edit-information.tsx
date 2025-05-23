@@ -111,7 +111,7 @@ const EditInformation = ({ user }: Props) => {
 					<AccordionItem value='item-1'>
 						<AccordionTrigger>
 							<div className='flex flex-col space-y-0'>
-								<h2 className='font-bold'>To'liq ism</h2>
+								<h2 className='font-bold'>To&apos;liq ism</h2>
 								<p className='text-muted-foreground'>{user.fullName}</p>
 							</div>
 						</AccordionTrigger>
