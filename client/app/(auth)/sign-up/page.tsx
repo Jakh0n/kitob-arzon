@@ -48,13 +48,13 @@ const SignUpPage = () => {
 		setIsLoading(true)
 		const res = await sendOtp({ email: values.email })
 		if (res?.serverError || res?.validationErrors || !res?.data) {
-			return onError('Something went wrong')
+			return onError('Xatolik yuz berdi')
 		}
 		if (res.data.failure) {
 			return onError(res.data.failure)
 		}
 		if (res.data.status === 200) {
-			toast({ description: 'OTP sent successfully' })
+			toast({ description: 'OTP yuborildi' })
 			setIsVerifying(true)
 			setIsLoading(false)
 			setIsResend(false)
@@ -68,7 +68,7 @@ const SignUpPage = () => {
 			email: form.getValues('email'),
 		})
 		if (res?.serverError || res?.validationErrors || !res?.data) {
-			return onError('Something went wrong')
+			return onError('Xatolik yuz berdi')
 		}
 		if (res.data.failure) {
 			return onError(res.data.failure)
@@ -76,7 +76,7 @@ const SignUpPage = () => {
 		if (res.data.status === 301) {
 			setIsResend(true)
 			setIsLoading(false)
-			toast({ description: 'OTP was expired. Please resend OTP' })
+			toast({ description: 'OTP vaqti o&apos;tgan. Iltimos, OTP yuboring' })
 		}
 		if (res.data.status === 200) {
 			const response = await register(form.getValues())
@@ -85,13 +85,13 @@ const SignUpPage = () => {
 				response?.validationErrors ||
 				!response?.data
 			) {
-				return onError('Something went wrong')
+				return onError('Xatolik yuz berdi')
 			}
 			if (response.data.failure) {
 				return onError(response.data.failure)
 			}
 			if (response.data.user._id) {
-				toast({ description: 'User created successfully' })
+				toast({ description: 'User yaratildi' })
 				signIn('credentials', {
 					userId: response.data.user._id,
 					callbackUrl: '/',
@@ -102,9 +102,10 @@ const SignUpPage = () => {
 
 	return (
 		<Card className='max-md:w-full w-1/2 p-4'>
-			<h1 className='text-xl font-bold'>Sign Up</h1>
+			<h1 className='text-xl font-bold'>Ro&apos;yxatdan otish</h1>
 			<p className='text-muted-foreground text-sm'>
-				Welcome to our platform! Please sign up to create an
+				Arzon<span className='font-semibold text-primary'>Kitob</span> tizimiga
+				kirish
 			</p>
 			<Separator className='my-3' />
 			<Form {...form}>
@@ -114,7 +115,7 @@ const SignUpPage = () => {
 						name='fullName'
 						render={({ field }) => (
 							<FormItem className='space-y-0'>
-								<Label>Full Name</Label>
+								<Label>To&apos;liq ism</Label>
 								<FormControl>
 									<Input placeholder='Osman Ali' {...field} />
 								</FormControl>
@@ -129,7 +130,7 @@ const SignUpPage = () => {
 							<FormItem className='space-y-0'>
 								<Label>Email</Label>
 								<FormControl>
-									<Input placeholder='example@gmial.com' {...field} />
+									<Input placeholder='namuna@gmail.com' {...field} />
 								</FormControl>
 								<FormMessage className='text-red-500 text-xs' />
 							</FormItem>
@@ -140,7 +141,7 @@ const SignUpPage = () => {
 						name='password'
 						render={({ field }) => (
 							<FormItem className='space-y-0'>
-								<Label>Password</Label>
+								<Label>Parol</Label>
 								<FormControl>
 									<Input placeholder='****' type='password' {...field} />
 								</FormControl>
@@ -150,7 +151,8 @@ const SignUpPage = () => {
 					/>
 					{!isVerifying && (
 						<Button disabled={isLoading} type='submit'>
-							Submit {isLoading && <Loader className='animate-spin' />}
+							Ro&apos;yxatdan otish{' '}
+							{isLoading && <Loader className='animate-spin' />}
 						</Button>
 					)}
 				</form>
@@ -166,7 +168,7 @@ const SignUpPage = () => {
 							name='otp'
 							render={({ field }) => (
 								<FormItem className='w-full space-y-0'>
-									<Label>Enter OTP</Label>
+									<Label>OTP kiriting</Label>
 									<FormControl>
 										<InputOTP maxLength={6} {...field}>
 											<InputOTPGroup>
@@ -188,7 +190,7 @@ const SignUpPage = () => {
 						/>
 						<div className='flex items-center gap-1'>
 							<Button disabled={isLoading || isResend} type='submit'>
-								Verify {isLoading && <Loader className='animate-spin' />}
+								Tasdiqlash {isLoading && <Loader className='animate-spin' />}
 							</Button>
 							{isResend && (
 								<Button
@@ -196,7 +198,8 @@ const SignUpPage = () => {
 									onClick={() => onSubmit(form.getValues())}
 									type='button'
 								>
-									Resend OTP {isLoading && <Loader className='animate-spin' />}
+									OTP yuborish{' '}
+									{isLoading && <Loader className='animate-spin' />}
 								</Button>
 							)}
 						</div>
@@ -205,9 +208,9 @@ const SignUpPage = () => {
 			)}
 			<div className='mt-4'>
 				<div className='text-sm text-muted-foreground'>
-					Already have an account?{' '}
+					Hisobingiz bormi?{' '}
 					<Button asChild variant={'link'} className='p-0'>
-						<Link href='/sign-in'>Sign in</Link>
+						<Link href='/sign-in'>Tizimga kirish</Link>
 					</Button>
 				</div>
 			</div>

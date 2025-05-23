@@ -4,8 +4,10 @@ import { Button } from '@/components/ui/button'
 import { authOptions } from '@/lib/auth-options'
 import { formatPrice } from '@/lib/utils'
 import { Params } from '@/types'
+import { Package } from 'lucide-react'
 import { getServerSession } from 'next-auth'
 import Image from 'next/image'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import BuyButton from './_components/buy-button'
 interface ProductPageProps {
@@ -91,7 +93,13 @@ const ProductPage = async ({ params }: ProductPageProps) => {
 					<div className='flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3'>
 						<BuyButton isLoggedIn={isLoggedIn} />
 						<Button size='lg' variant='outline' className='w-full sm:w-auto'>
-							Add to Wishlist
+							<Link
+								href={`/products?category=${product.category}`}
+								className='flex items-center gap-2'
+							>
+								<Package className='h-5 w-5' />
+								<span>Uxshash kitoblar</span>
+							</Link>
 						</Button>
 					</div>
 				</div>

@@ -82,21 +82,21 @@ function cancelTemplate({ user, product }) {
             Order Cancelled
         </div>
         <div class="content">
-            <p>Dear <strong>${user.fullName}</strong>,</p>
-            <p>We regret to inform you that your order has been cancelled. Here are the details:</p>
+            <p>${user.fullName}</strong>,</p>
+            <p>Buyurtmangiz bekor qilingani haqida sizni xabardor qilmoqchimiz. Mana batafsil ma'lumotlar:</p>
             <div class="product">
                 <img src="${product.image}" alt="${product.title}">
                 <div class="product-details">
                     <h3>${product.title}</h3>
-                    <p>Price: <strong>${formatPrice(product.price)}</strong></p>
+                    <p>Narxi: <strong>${formatPrice(product.price)}</strong></p>
                 </div>
             </div>
-            <p>If this was a mistake or you need assistance, please feel free to reach out to our support team.</p>
+            <p>Agar bu xatolik bo'lsa yoki yordam kerak bo'lsa, iltimos, qo'llab-quvvatlash jamoamiz bilan bog'laning.</p>
         </div>
         <div class="footer">
-            <p>We hope to serve you better in the future!</p>
+            <p>Kelajakda sizga yaxshiroq xizmat ko'rsatishga umid qilamiz!</p>
             <p>
-                Need help? <a href="mailto:yoqubjonovjahongir10@gmail.com">Contact Support</a>
+                Yordam kerakmi? <a href="mailto:yoqubjonovjahongir10@gmail.com">Qo'llab-quvvatlash bilan bog'lanish</a>
             </p>
         </div>
     </div>

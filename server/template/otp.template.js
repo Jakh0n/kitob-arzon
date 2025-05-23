@@ -63,13 +63,13 @@ function otpTemplate(otp) {
             <p>Hello,</p>
             <p>Here is your one-time password (OTP) for secure access:</p>
             <div class="otp">${otp}</div>
-            <p>This code is valid for the next 5 minutes.</p>
-            <p>If you didn’t request this, please ignore this email.</p>
+            <p>Bu kod keyingi 5 daqiqa davomida amal qiladi.</p>
+            <p>Agar siz bu so'rovni yubormagan bo'lsangiz, iltimos, bu xatni e'tiborsiz qoldiring.</p>
         </div>
         <div class="footer">
-            <p>Thank you for using our service!</p>
+            <p>Xizmatimizdan foydalanganingiz uchun rahmat!</p>
             <p>
-                Need help? <a href="mailto:support@example.com">Contact Support</a>
+                Yordam kerakmi? <a href="mailto:support@example.com">Qo'llab-quvvatlash bilan bog'lanish</a>
             </p>
         </div>
     </div>

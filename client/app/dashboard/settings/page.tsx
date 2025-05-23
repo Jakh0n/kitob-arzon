@@ -28,7 +28,6 @@ import { passwordSchema } from '@/lib/validation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Label } from '@radix-ui/react-label'
 import { signOut } from 'next-auth/react'
-import React from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -44,13 +43,13 @@ const Page = () => {
 		setIsLoading(true)
 		const res = await updateUser({ isDeleted: true, deletedAt: new Date() })
 		if (res?.serverError || res?.validationErrors || !res?.data) {
-			return onError('Something went wrong')
+			return onError('Xatolik yuz berdi')
 		}
 		if (res.data.failure) {
 			return onError(res.data.failure)
 		}
 		if (res.data.status === 200) {
-			toast({ description: 'Account deleted successfully' })
+			toast({ description: "Hisob o'chirildi" })
 			setIsLoading(false)
 			signOut({ callbackUrl: '/sign-up' })
 		}
@@ -60,13 +59,13 @@ const Page = () => {
 		setIsLoading(true)
 		const res = await updatePassword(values)
 		if (res?.serverError || res?.validationErrors || !res?.data) {
-			return onError('Something went wrong')
+			return onError('Xatolik yuz berdi')
 		}
 		if (res.data.failure) {
 			return onError(res.data.failure)
 		}
 		if (res.data.status === 200) {
-			toast({ description: 'Password updated successfully' })
+			toast({ description: "Parol muvaffaqiyatli o'zgartirildi" })
 			setIsLoading(false)
 			form.reset()
 		}
@@ -74,31 +73,35 @@ const Page = () => {
 
 	return (
 		<>
-			<h1 className='text-xl font-bold'>Danger zone</h1>
+			<h1 className='text-xl font-bold'>Xavfli zona</h1>
 			<Separator className='my-3' />
 			<div className='p-4 bg-secondary flex flex-col space-y-0'>
-				<div className='text-lg font-bold'>Delete account</div>
+				<div className='text-lg font-bold'>Hisobni o'chirish</div>
 				<p className='text-sm text-muted-foreground'>
-					Deleting your account will remove all your data from our servers. This
-					action is irreversible.
+					Hisobingizni o'chirish barcha ma'lumotlaringizni serverlarimizdan
+					o'chiradi. Bu amalni qaytarib bo'lmaydi.
 				</p>
 				<AlertDialog>
 					<AlertDialogTrigger asChild>
 						<Button className='w-fit' size={'sm'} variant={'destructive'}>
-							Delete account
+							Hisobni o'chirish
 						</Button>
 					</AlertDialogTrigger>
 					<AlertDialogContent>
 						<AlertDialogHeader>
-							<AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+							<AlertDialogTitle>Ishonchingiz komilmi?</AlertDialogTitle>
 							<AlertDialogDescription>
-								This action cannot be undone. This will permanently delete your
-								account and remove your data from our servers.
+								Bu amalni qaytarib bo'lmaydi. Bu hisobingizni va barcha
+								ma'lumotlaringizni serverlarimizdan o'chirib tashlaydi.
 							</AlertDialogDescription>
 						</AlertDialogHeader>
 						<AlertDialogFooter>
-							<AlertDialogCancel disabled={isLoading}>Cancel</AlertDialogCancel>
-							<AlertDialogAction onClick={onDelete} disabled={isLoading} >Continue</AlertDialogAction>
+							<AlertDialogCancel disabled={isLoading}>
+								Bekor qilish
+							</AlertDialogCancel>
+							<AlertDialogAction onClick={onDelete} disabled={isLoading}>
+								Davom etish
+							</AlertDialogAction>
 						</AlertDialogFooter>
 					</AlertDialogContent>
 				</AlertDialog>
@@ -131,7 +134,7 @@ const Page = () => {
 								name='newPassword'
 								render={({ field }) => (
 									<FormItem className='space-y-0'>
-										<Label>New password</Label>
+										<Label>Yangi parol</Label>
 										<FormControl>
 											<Input
 												placeholder='****'
@@ -149,7 +152,7 @@ const Page = () => {
 								name='confirmPassword'
 								render={({ field }) => (
 									<FormItem className='space-y-0'>
-										<Label>Confirm password</Label>
+										<Label>Tasdiqlash paroli</Label>
 										<FormControl>
 											<Input
 												placeholder='****'
@@ -162,7 +165,9 @@ const Page = () => {
 									</FormItem>
 								)}
 							/>
-							<Button type='submit'>Submit</Button>
+							<Button type='submit' disabled={isLoading}>
+								O'zgartirish
+							</Button>
 						</form>
 					</Form>
 				</div>

@@ -39,7 +39,7 @@ function Navbar({ session }: NavbarProps) {
 							href='/products'
 							className='text-sm font-medium transition-colors hover:text-primary'
 						>
-							All Products
+							Hamma Kitoblar
 						</Link>
 					</div>
 

@@ -13,14 +13,14 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-	metadataBase: new URL('https://kitob-arzon-frontend.vercel.app/'),
-	title: "Arzon kitob | Koreyada eng arzon kitoblar do'koni",
+	metadataBase: new URL('https://flami.org/'),
+	title: "Arzon Kitob | Koreyada eng arzon kitoblar do'koni",
 	description:
 		"Koreyada yashovchi o'zbeklar uchun eng arzon va eng yangi kitoblarni taklif qilamiz. O'zbek, rus va ingliz tillaridagi kitoblarni online buyurtma qiling.",
 	authors: [
 		{
 			name: 'Jakhon Yokubov',
-			url: 'https://kitob-arzon-frontend.vercel.app',
+			url: 'https://flami.org',
 		},
 	],
 	icons: { icon: '/logo.webp' },
@@ -29,17 +29,20 @@ export const metadata: Metadata = {
 		description:
 			"Koreyada yashovchi o'zbeklar uchun eng arzon va eng yangi kitoblarni taklif qilamiz. O'zbek, rus va ingliz tillaridagi kitoblarni online buyurtma qiling.",
 		type: 'website',
-		url: 'https://kitob-arzon-frontend.vercel.app',
-		locale: 'uz-UZ',
+		url: 'https://flami.org',
+		locale: 'kr-KR',
 		images: '/logo.webp',
 		countryName: 'Korea',
 		siteName: 'Arzon kitob',
-		emails: 'info@kitob-arzon-frontend.vercel.app',
+		emails: 'info@flami.org',
 	},
 	keywords: [
 		'kitob dukoni Koreyada',
 		'Koreyada kitob sotish',
 		"Koreyada o'zbek kitoblari",
+		'Arzon kitoblar Koreyada',
+		'Arzon kitoblar',
+		'Muqaddima',
 		"Koreyada kitob do'koni",
 		'arzon kitoblar Koreyada',
 		'Koreyada yangi kitoblar',

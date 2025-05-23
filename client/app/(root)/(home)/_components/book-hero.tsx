@@ -23,7 +23,7 @@ const BookHero = ({ featuredBook }: BookHeroProps) => {
 					</p>
 					<div className='flex flex-col space-y-3 sm:flex-row sm:space-x-3 sm:space-y-0'>
 						<Button size='lg' asChild>
-							<Link href={`/product/${featuredBook._id}`}>View Book</Link>
+							<Link href={`/product/${featuredBook._id}`}>Ko&apos;rish</Link>
 						</Button>
 						<Button size='lg' variant='outline'>
 							{formatPrice(featuredBook.price)}

@@ -88,23 +88,22 @@ function updateTemplate({ user, product, status }) {
             Order Status Update
         </div>
         <div class="content">
-            <p>Dear <strong>${user.fullName}</strong>,</p>
-            <p>We wanted to update you on the status of your order. Here are the details:</p>
+            <p>${user.fullName}</strong>,</p>
+            <p>Buyurtmangiz holati haqida sizni xabardor qilmoqchimiz. Mana batafsil ma'lumotlar:</p>
             <div class="product">
                 <img src="${product.image}" alt="${product.title}">
                 <div class="product-details">
                     <h3>${product.title}</h3>
-                    <p>Price: <strong>${formatPrice(product.price)}</strong></p>
+                    <p>Narxi: <strong>${formatPrice(product.price)}</strong></p>
                 </div>
             </div>
-            <p class="status">Order Status: <strong>${status}</strong></p>
-            <p>We’ll notify you about further updates or changes. Thank you for your patience!</p>
+            <p class="status">Buyurtma holati: <strong>${status}</strong></p>
+            <p>Keyingi o'zgarishlar yoki yangilanishlar haqida sizni xabardor qilamiz. Sizning sabringiz uchun rahmat!</p>
         </div>
         <div class="footer">
-            <p>Thank you for shopping with us!</p>
+            <p>Biz bilan xarid qilganingiz uchun rahmat!</p>
             <p>
-                                Need help? <a href="mailto:sammibadriddinov@gmail.com">Contact Support</a>
-
+                Yordam kerakmi? <a href="mailto:sammibadriddinov@gmail.com">Qo'llab-quvvatlash bilan bog'lanish</a>
             </p>
         </div>
     </div>

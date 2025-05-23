@@ -56,7 +56,7 @@ const Page: FC<Props> = async props => {
 					{transactions && transactions.length === 0 && (
 						<TableRow>
 							<TableCell colSpan={4} className='text-center'>
-								No transactions found.
+								Tranzaksiyalar topilmadi.
 							</TableCell>
 						</TableRow>
 					)}

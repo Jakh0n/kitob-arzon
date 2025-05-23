@@ -40,22 +40,23 @@ const SignInPage = () => {
 		setIsLoading(true)
 		const res = await login(values)
 		if (res?.serverError || res?.validationErrors || !res?.data) {
-			return onError('Something went wrong')
+			return onError('Xatolik yuz berdi')
 		}
 		if (res.data.failure) {
 			return onError(res.data.failure)
 		}
 		if (res.data.user) {
-			toast({ description: 'Logged in successfully' })
+			toast({ description: 'Tizimga kirdingiz' })
 			signIn('credentials', { userId: res.data.user._id, callbackUrl: '/' })
 		}
 	}
 
 	return (
 		<Card className='w-1/2 p-4 max-md:w-full'>
-			<h1 className='text-xl font-bold'>Sign In</h1>
+			<h1 className='text-xl font-bold'>Tizimga kirish</h1>
 			<p className='text-sm text-muted-foreground'>
-				Welcome back! Please sign in to your account.
+				Arzon<span className='font-semibold text-primary'>Kitob</span> tizimiga
+				kirish
 			</p>
 			<Separator className='my-3' />
 			<Form {...form}>
@@ -68,7 +69,7 @@ const SignInPage = () => {
 								<Label>Email</Label>
 								<FormControl>
 									<Input
-										placeholder='example@gmial.com'
+										placeholder='namuna@gmail.com'
 										disabled={isLoading}
 										{...field}
 									/>
@@ -82,7 +83,7 @@ const SignInPage = () => {
 						name='password'
 						render={({ field }) => (
 							<FormItem className='space-y-0'>
-								<Label>Password</Label>
+								<Label>Parol</Label>
 								<FormControl>
 									<Input
 										placeholder='****'
@@ -96,16 +97,16 @@ const SignInPage = () => {
 						)}
 					/>
 					<Button type='submit' disabled={isLoading}>
-						Submit {isLoading && <Loader className='animate-spin' />}
+						Kirish {isLoading && <Loader className='animate-spin' />}
 					</Button>
 				</form>
 			</Form>
 
 			<div className='mt-4'>
 				<div className='text-sm text-muted-foreground'>
-					Don&apos;t have an account?{' '}
+					Hisobingiz yo&apos;q?{' '}
 					<Button asChild variant={'link'} className='p-0'>
-						<Link href='/sign-up'>Sign up</Link>
+						<Link href='/sign-up'>Ro&apos;yxatdan otish</Link>
 					</Button>
 				</div>
 			</div>

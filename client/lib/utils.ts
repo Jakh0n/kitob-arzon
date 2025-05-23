@@ -54,15 +54,15 @@ export function removeUrlQuery({ key, params }: QueryProps) {
 export const getStatusText = (status: number) => {
 	switch (status) {
 		case TransactionState.Pending:
-			return 'Pending'
+			return 'Kutilmoqda'
 		case TransactionState.Paid:
-			return 'Paid'
+			return "To'langan"
 		case TransactionState.PaidCanceled:
-			return 'Cancelled'
+			return 'Bekor qilingan'
 		case TransactionState.PendingCanceled:
-			return 'Cancelled'
+			return 'Bekor qilingan'
 		default:
-			return 'Unknown'
+			return "Noma'lum"
 	}
 }
 

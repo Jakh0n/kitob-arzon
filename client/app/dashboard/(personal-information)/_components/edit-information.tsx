@@ -1,5 +1,6 @@
 'use client'
 
+import { updateUser } from '@/actions/user.action'
 import {
 	Accordion,
 	AccordionContent,
@@ -15,21 +16,20 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from '@/components/ui/dialog'
-import { Edit2, Loader } from 'lucide-react'
-import FullNameForm from './full-name.form'
-import EmailForm from './email.form'
-import { IUser } from '@/types'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { updateUserSchema } from '@/lib/validation'
-import { useState } from 'react'
-import { useSession } from 'next-auth/react'
+import { Skeleton } from '@/components/ui/skeleton'
 import UseAction from '@/hooks/use-action'
-import { updateUser } from '@/actions/user.action'
 import { toast } from '@/hooks/use-toast'
 import { UploadDropzone } from '@/lib/uploadthing'
-import { Skeleton } from '@/components/ui/skeleton'
+import { updateUserSchema } from '@/lib/validation'
+import { IUser } from '@/types'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Edit2, Loader } from 'lucide-react'
+import { useSession } from 'next-auth/react'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+import EmailForm from './email.form'
+import FullNameForm from './full-name.form'
 
 interface Props {
 	user: IUser
@@ -111,7 +111,7 @@ const EditInformation = ({ user }: Props) => {
 					<AccordionItem value='item-1'>
 						<AccordionTrigger>
 							<div className='flex flex-col space-y-0'>
-								<h2 className='font-bold'>Full Name</h2>
+								<h2 className='font-bold'>To'liq ism</h2>
 								<p className='text-muted-foreground'>{user.fullName}</p>
 							</div>
 						</AccordionTrigger>
