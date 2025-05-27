@@ -14,7 +14,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://flami.org/'),
-	title: "Arzon Kitob | Koreyada eng arzon kitoblar do'koni",
+	title: "FLAMI | Koreyada eng arzon kitoblar do'koni",
 	description:
 		"Koreyada yashovchi o'zbeklar uchun eng arzon va eng yangi kitoblarni taklif qilamiz. O'zbek, rus va ingliz tillaridagi kitoblarni online buyurtma qiling.",
 	authors: [
@@ -23,28 +23,28 @@ export const metadata: Metadata = {
 			url: 'https://flami.org',
 		},
 	],
-	icons: { icon: '/logo.webp' },
+	icons: { icon: '/image.png' },
 	openGraph: {
-		title: "Arzon kitob | Koreyada eng arzon kitoblar do'koni",
+		title: "FLAMI | Koreyada eng arzon kitoblar do'koni",
 		description:
 			"Koreyada yashovchi o'zbeklar uchun eng arzon va eng yangi kitoblarni taklif qilamiz. O'zbek, rus va ingliz tillaridagi kitoblarni online buyurtma qiling.",
 		type: 'website',
 		url: 'https://flami.org',
 		locale: 'kr-KR',
-		images: '/logo.webp',
+		images: '/image.png',
 		countryName: 'Korea',
-		siteName: 'Arzon kitob',
+		siteName: 'FLAMI',
 		emails: 'info@flami.org',
 	},
 	keywords: [
 		'kitob dukoni Koreyada',
 		'Koreyada kitob sotish',
 		"Koreyada o'zbek kitoblari",
-		'Arzon kitoblar Koreyada',
-		'Arzon kitoblar',
+		'FLAMI',
 		'Muqaddima',
 		"Koreyada kitob do'koni",
 		'arzon kitoblar Koreyada',
+		'kitob dokoni',
 		'Koreyada yangi kitoblar',
 		"Koreyada o'zbek tilidagi kitoblar",
 		'Koreyada kutubxona',
