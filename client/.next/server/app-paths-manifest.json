@@ -9,5 +9,6 @@
   "/dashboard/watch-list/page": "app/dashboard/watch-list/page.js",
   "/dashboard/orders/page": "app/dashboard/orders/page.js",
   "/dashboard/payments/page": "app/dashboard/payments/page.js",
-  "/dashboard/settings/page": "app/dashboard/settings/page.js"
+  "/dashboard/settings/page": "app/dashboard/settings/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
 }

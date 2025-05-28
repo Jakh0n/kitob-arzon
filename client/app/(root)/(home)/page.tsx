@@ -2,11 +2,9 @@ import { getProducts } from '@/actions/user.action'
 import ProductCard from '@/components/card/product.card'
 import Filter from '@/components/shared/filter'
 import Pagination from '@/components/shared/pagination'
-import ShareBtn from '@/components/shared/share-btn'
 import { Separator } from '@/components/ui/separator'
 import { SearchParams } from '@/types'
 import BookHero from './_components/book-hero'
-
 interface Props {
 	searchParams: SearchParams
 }
@@ -28,12 +26,13 @@ const Page = async ({ searchParams }: Props) => {
 
 	return (
 		<>
-			<div className='max-sm:hidden '>
+			<div className=' w-full'>
 				{featuredBook && <BookHero featuredBook={featuredBook} />}
 			</div>
+
 			<div className=' w-full flex items-center   mt-10 '>
-				<h1 className='font-bold mr-4'>Products</h1>
-				<ShareBtn />
+				<h1 className='font-bold mr-4'>Kitoblar</h1>
+
 				<Filter />
 			</div>
 

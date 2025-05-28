@@ -1,5 +1,6 @@
 import { getProducts } from '@/actions/user.action'
 import ProductCard from '@/components/card/product.card'
+import Carousel from '@/components/shared/carousel'
 import Filter from '@/components/shared/filter'
 import Pagination from '@/components/shared/pagination'
 import { Separator } from '@/components/ui/separator'
@@ -23,6 +24,7 @@ const Page = async ({ searchParams }: Props) => {
 
 	return (
 		<>
+			<Carousel products={products} />
 			<div className=' w-full flex items-center   mt-10 '>
 				<h1 className='font-bold mr-4'>Kitoblar</h1>
 				<Filter />
