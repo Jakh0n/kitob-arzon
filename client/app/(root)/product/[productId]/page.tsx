@@ -1,4 +1,5 @@
 import { getProduct } from '@/actions/user.action'
+import ShareBtn from '@/components/shared/share-btn'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { authOptions } from '@/lib/auth-options'
@@ -75,6 +76,7 @@ const ProductPage = async ({ params }: ProductPageProps) => {
 						<Badge className='w-fit text-sm md:text-base' variant={'secondary'}>
 							# {product.category}
 						</Badge>
+						<ShareBtn />
 					</div>
 
 					<p className='text-sm md:text-base text-muted-foreground leading-relaxed'>
@@ -92,12 +94,12 @@ const ProductPage = async ({ params }: ProductPageProps) => {
 
 					<div className='flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3'>
 						<BuyButton isLoggedIn={isLoggedIn} />
-						<Button size='lg' variant='outline' className='w-full sm:w-auto'>
+						<Button size='lg' variant='outline' className='w-fit sm:w-auto'>
 							<Link
 								href={`/products?category=${product.category}`}
 								className='flex items-center gap-2'
 							>
-								<Package className='h-5 w-5' />
+								<Package className='size-5' />
 								<span>Uxshash kitoblar</span>
 							</Link>
 						</Button>

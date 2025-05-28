@@ -1,9 +1,13 @@
 {
   "/(root)/(home)/page": "app/(root)/(home)/page.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
   "/(root)/product/[productId]/page": "app/(root)/product/[productId]/page.js",
-  "/(root)/contact/page": "app/(root)/contact/page.js",
   "/(root)/products/page": "app/(root)/products/page.js",
-  "/admin/(customers)/page": "app/admin/(customers)/page.js"
+  "/(auth)/sign-in/page": "app/(auth)/sign-in/page.js",
+  "/(root)/contact/page": "app/(root)/contact/page.js",
+  "/dashboard/(personal-information)/page": "app/dashboard/(personal-information)/page.js",
+  "/dashboard/watch-list/page": "app/dashboard/watch-list/page.js",
+  "/dashboard/orders/page": "app/dashboard/orders/page.js",
+  "/dashboard/payments/page": "app/dashboard/payments/page.js",
+  "/dashboard/settings/page": "app/dashboard/settings/page.js"
 }
