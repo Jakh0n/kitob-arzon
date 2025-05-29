@@ -27,6 +27,7 @@
     "@types/axios": "^0.9.36",
     "@types/lodash": "^4.17.14",
     "@uploadthing/react": "^7.1.5",
+    "@vercel/analytics": "^1.5.0",
     "axios": "^1.7.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

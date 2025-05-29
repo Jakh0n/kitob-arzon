@@ -2,6 +2,7 @@ import SessionProvider from '@/components/providers/session.provider'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
 import { ChildProps } from '@/types'
+import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import './globals.css'
@@ -97,6 +98,7 @@ export default function RootLayout({ children }: ChildProps) {
 							disableTransitionOnChange
 						>
 							{children}
+							<Analytics />
 						</ThemeProvider>
 					</div>
 					<Toaster />
