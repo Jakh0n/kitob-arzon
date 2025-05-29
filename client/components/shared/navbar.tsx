@@ -33,13 +33,14 @@ function Navbar({ session }: NavbarProps) {
 							href='/'
 							className='text-sm font-medium transition-colors hover:text-primary'
 						>
-							Home
+							<Home className='size-5' />
+							<span className='font-bold '>Asosiy</span>
 						</Link>
 						<Link
 							href='/products'
 							className='text-sm font-medium transition-colors hover:text-primary'
 						>
-							Hamma Kitoblar
+							Barcha Kitoblar
 						</Link>
 					</div>
 
@@ -51,7 +52,7 @@ function Navbar({ session }: NavbarProps) {
 							</Button>
 						</SheetTrigger>
 						<SheetContent side='right'>
-							<SheetTitle className='text-xl font-bold mb-4'>Menu</SheetTitle>
+							<SheetTitle className='text-xl font-  mb-4'>Menu</SheetTitle>
 							<div className='flex flex-col gap-4'>
 								<Link
 									href='/'
@@ -60,7 +61,7 @@ function Navbar({ session }: NavbarProps) {
 								>
 									<Home className='h-5 w-5' />
 									<span className='text-sm font-medium transition-colors hover:text-primary'>
-										Home
+										Asosiy
 									</span>
 								</Link>
 								<Link
@@ -70,7 +71,7 @@ function Navbar({ session }: NavbarProps) {
 								>
 									<Package className='h-5 w-5' />
 									<span className='text-sm font-medium transition-colors hover:text-primary'>
-										All Products
+										Barcha Kitoblar
 									</span>
 								</Link>
 							</div>

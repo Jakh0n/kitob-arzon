@@ -9,7 +9,9 @@ async function Layout({ children }: ChildProps) {
 	return (
 		<div>
 			<Navbar session={session} />
-			<main className='mt-44 flex justify-center'>{children}</main>
+			<main className='px-2 sm:px-4 md:px-6 lg:px-8 mt-44 flex justify-center'>
+				{children}
+			</main>
 		</div>
 	)
 }

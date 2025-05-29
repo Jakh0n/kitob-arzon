@@ -89,7 +89,7 @@ export default function RootLayout({ children }: ChildProps) {
 				<body
 					className={`${montserrat.variable} overflow-x-hidden antialiased`}
 				>
-					<div className='container max-w-6xl mt-24'>
+					<div className='container px-2 sm:px-4 md:px-6 lg:px-8 max-w-full lg:max-w-6xl mt-24'>
 						<ThemeProvider
 							attribute='class'
 							defaultTheme='system'

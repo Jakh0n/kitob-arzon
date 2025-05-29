@@ -14,7 +14,7 @@ async function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<div>
 			<Navbar session={session} />
-			<div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+			<div className='px-2 sm:px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6'>
 				{/* Mobile Sidebar Component */}
 				<MobileSidebar />
 

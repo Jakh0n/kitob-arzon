@@ -4,7 +4,7 @@ import Carousel from '@/components/shared/carousel'
 import Filter from '@/components/shared/filter'
 import Pagination from '@/components/shared/pagination'
 import { Separator } from '@/components/ui/separator'
-import { SearchParams } from '@/types'
+import { IProduct, SearchParams } from '@/types'
 
 interface Props {
 	searchParams: SearchParams
@@ -18,20 +18,18 @@ const Page = async ({ searchParams }: Props) => {
 		page: `${page || '1'}`,
 	})
 
-	const products = res?.data?.products
+	const products: IProduct[] = res?.data?.products || []
 
 	const isNext = res?.data?.isNext || false
 
 	return (
 		<>
-			<Carousel products={products} />
+			{products.length > 0 && <Carousel products={products} />}
 			<div className=' w-full flex items-center   mt-10 '>
 				<h1 className='font-bold mr-4'>Kitoblar</h1>
 				<Filter />
 			</div>
-
 			<Separator className='my-4' />
-
 			<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4'>
 				{products &&
 					products.map(product => (
