@@ -3,5 +3,6 @@
   "/(root)/(home)/page": "app/(root)/(home)/page.js",
   "/(root)/product/[productId]/page": "app/(root)/product/[productId]/page.js",
   "/(root)/contact/page": "app/(root)/contact/page.js",
-  "/admin/(customers)/page": "app/admin/(customers)/page.js"
+  "/admin/(customers)/page": "app/admin/(customers)/page.js",
+  "/(root)/products/page": "app/(root)/products/page.js"
 }
