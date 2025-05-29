@@ -86,7 +86,11 @@ export const updateStatusSchema = z
 	.merge(idSchema)
 
 export const contactSchema = z.object({
-	message: z.string().min(10),
-	phone: z.string().min(10),
-	name: z.string().min(3),
+	name: z
+		.string()
+		.min(2, { message: "Ism kamida 2 ta harfdan iborat bo'lishi kerak" }),
+	phone: z.string().min(9, { message: "Telefon raqamni to'g'ri kiriting" }),
+	address: z.string().min(5, { message: "Manzilni to'liqroq kiriting" }),
+	bookTitle: z.string().min(2, { message: 'Kitob nomini kiriting' }),
+	message: z.string().optional(),
 })

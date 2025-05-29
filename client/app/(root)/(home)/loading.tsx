@@ -44,28 +44,28 @@ export default function Loading() {
 						.map((_, index) => (
 							<div
 								key={index}
-								className='flex flex-col h-[360px] bg-card rounded-lg p-3'
+								className='flex flex-col h-[300px] bg-card rounded-lg p-3'
 							>
 								{/* Book cover skeleton */}
-								<div className='relative w-full h-[220px]'>
+								<div className='relative w-full h-[180px]'>
 									<Skeleton className='absolute inset-0 rounded-lg' />
 								</div>
 
 								{/* Book info container */}
-								<div className='flex flex-col justify-between flex-1 mt-3'>
+								<div className='flex flex-col justify-between flex-1 mt-2'>
 									{/* Title and description */}
-									<div className='space-y-2'>
-										<Skeleton className='h-4 w-[80%]' />
-										<Skeleton className='h-4 w-[60%]' />
+									<div className='space-y-1.5'>
+										<Skeleton className='h-3.5 w-[80%]' />
+										<Skeleton className='h-3.5 w-[60%]' />
 									</div>
 
-									<div className='space-y-2'>
+									<div className='space-y-1.5'>
 										{/* Author name */}
 										<Skeleton className='h-3 w-[40%]' />
 
 										{/* Rating */}
-										<div className='flex items-center gap-2'>
-											<Skeleton className='h-4 w-4' />
+										<div className='flex items-center gap-1.5'>
+											<Skeleton className='h-3.5 w-3.5' />
 											<Skeleton className='h-3 w-[30%]' />
 										</div>
 									</div>
